@@ -107,6 +107,7 @@ function draw() {
     if(touches.length>0|| keyDown("space")&& trex.y >= 160) {
         trex.velocityY = -12;
         jumpSound.play();
+        touches=[];
     }
     
     //add gravity
