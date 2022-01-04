@@ -1,7 +1,7 @@
 var PLAY = 1;
 var END = 0;
-var gameState = PLAY;
-
+var gameState = 1;
+//cambie el estado de gameState directamente a uno.
 var trex, trex_running, trex_collided;
 var ground, invisibleGround, groundImage;
 
