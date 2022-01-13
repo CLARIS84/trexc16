@@ -38,7 +38,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(600, 200);
+  createCanvas(windowWidth, windowHeight);
   
   trex = createSprite(50,180,20,50);
   
@@ -48,20 +48,20 @@ function setup() {
 
   trex.scale = 0.5;
   
-  ground = createSprite(200,180,400,20);
+  ground = createSprite(windowWidth/3,180,400,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   
-  gameOver = createSprite(300,100);
+  gameOver = createSprite(windowWidth/2,100);
   gameOver.addImage(gameOverImg);
   
-  restart = createSprite(300,140);
+  restart = createSprite(windowWidth/2,140);
   restart.addImage(restartImg);
   
   gameOver.scale = 0.5;
   restart.scale = 0.5;
   
-  invisibleGround = createSprite(200,190,400,10);
+  invisibleGround = createSprite(windowWidth/3,190,400,10);
   invisibleGround.visible = false;
   
   //create Obstacle and Cloud Groups
@@ -80,7 +80,7 @@ function draw() {
   
   background("white");
   //displaying score
-  text("Score: "+ score, 500,50);
+  text("Score: "+ score, windowWidth*3/4,50);
   
  
   
@@ -168,7 +168,7 @@ function reset(){
 
 function spawnObstacles(){
  if (frameCount % 60 === 0){
-   var obstacle = createSprite(600,165,10,40);
+   var obstacle = createSprite(windowWidth+30,165,10,40);
    obstacle.velocityX = -(6 + score/100);
    
     //generate random obstacles
@@ -201,7 +201,7 @@ function spawnObstacles(){
 function spawnClouds() {
   //write code here to spawn the clouds
  if (frameCount % 60 === 0) {
-    var cloud = createSprite(600,120,40,10);
+    var cloud = createSprite(windowWidth+30,120,40,10);
     cloud.y = Math.round(random(80,120));
     cloud.addImage(cloudImage);
     cloud.scale = 0.5;
