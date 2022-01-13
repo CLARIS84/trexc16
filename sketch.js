@@ -61,7 +61,7 @@ function setup() {
   gameOver.scale = 0.5;
   restart.scale = 0.5;
   
-  invisibleGround = createSprite(windowWidth/3,190,400,10);
+  invisibleGround = createSprite(windowWidth/3,190,windowWidth,10);
   invisibleGround.visible = false;
   
   //create Obstacle and Cloud Groups
@@ -80,7 +80,7 @@ function draw() {
   
   background("white");
   //displaying score
-  text("Score: "+ score, windowWidth*3/4,50);
+  text("Score: "+ score, windowWidth*4/5,50);
   
  
   
